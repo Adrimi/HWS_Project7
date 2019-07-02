@@ -14,6 +14,7 @@
 		F0F5D1AD22CA4C5200C89FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F5D1AB22CA4C5200C89FBA /* LaunchScreen.storyboard */; };
 		F0F93CE522CB9B8500CE102B /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F93CE422CB9B8500CE102B /* Petition.swift */; };
 		F0F93CE722CB9CCF00CE102B /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F93CE622CB9CCF00CE102B /* Petitions.swift */; };
+		F0F93CE922CBA41300CE102B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F93CE822CBA41300CE102B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F0F5D1AE22CA4C5200C89FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F93CE422CB9B8500CE102B /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		F0F93CE622CB9CCF00CE102B /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		F0F93CE822CBA41300CE102B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		F0F5D19622CA4C5000C89FBA = {
 			isa = PBXGroup;
 			children = (
+				F0F93CE822CBA41300CE102B /* DetailViewController.swift */,
 				F0F5D1A122CA4C5000C89FBA /* Project7 */,
 				F0F5D1A022CA4C5000C89FBA /* Products */,
 			);
@@ -143,6 +146,7 @@
 			files = (
 				F0F93CE522CB9B8500CE102B /* Petition.swift in Sources */,
 				F0F93CE722CB9CCF00CE102B /* Petitions.swift in Sources */,
+				F0F93CE922CBA41300CE102B /* DetailViewController.swift in Sources */,
 				F0F5D1A522CA4C5000C89FBA /* ViewController.swift in Sources */,
 				F0F5D1A322CA4C5000C89FBA /* AppDelegate.swift in Sources */,
 			);
