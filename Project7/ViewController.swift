@@ -9,11 +9,30 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var petitions = [String]()
+    var petitions = [Petition]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Online data
+        let urlString = "https://www.hackingwithswift.com/sample/petitions-1.json"
+        
+        // Convert to URL format
+        if let url = URL(string: urlString) {
+            // and then to Data format. Can fail if network is shut off. Will freeze thread until full fetch is comleted
+            if let data = try? Data(contentsOf: url) {
+                parse(json: data)
+            }
+        }
+    }
+    
+    func parse(json: Data) {
+        let decoder = JSONDecoder()
+        
+        if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
+            petitions = jsonPetitions.results
+            tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
