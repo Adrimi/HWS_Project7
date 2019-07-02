@@ -15,7 +15,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         // Online data
-        let urlString = "https://www.hackingwithswift.com/sample/petitions-1.json"
+        let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         
         // Convert to URL format
         if let url = URL(string: urlString) {
