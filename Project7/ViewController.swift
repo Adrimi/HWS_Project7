@@ -29,8 +29,17 @@ class ViewController: UITableViewController {
             // and then to Data format. Can fail if network is shut off. Will freeze thread until full fetch is comleted
             if let data = try? Data(contentsOf: url) {
                 parse(json: data)
+                return
             }
+        } else {
+            showError()
         }
+    }
+    
+    func showError() {
+        let ac = UIAlertController(title: "Loading error", message: "There was a problem with loading the feed. Please check your connection and try again", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
     func parse(json: Data) {
