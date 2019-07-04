@@ -35,6 +35,9 @@ class DetailViewController: UIViewController {
         </body>
         </html>
         """
+        
+        // baseURL is to nil, cause i'm not using any external links to CSS, JS, pictures, etc.
+        webView.loadHTMLString(html, baseURL: nil)
     }
     
 
