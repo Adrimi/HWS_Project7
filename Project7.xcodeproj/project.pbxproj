@@ -44,7 +44,6 @@
 		F0F5D19622CA4C5000C89FBA = {
 			isa = PBXGroup;
 			children = (
-				F0F93CE822CBA41300CE102B /* DetailViewController.swift */,
 				F0F5D1A122CA4C5000C89FBA /* Project7 */,
 				F0F5D1A022CA4C5000C89FBA /* Products */,
 			);
@@ -65,6 +64,7 @@
 				F0F93CE422CB9B8500CE102B /* Petition.swift */,
 				F0F93CE622CB9CCF00CE102B /* Petitions.swift */,
 				F0F5D1A422CA4C5000C89FBA /* ViewController.swift */,
+				F0F93CE822CBA41300CE102B /* DetailViewController.swift */,
 				F0F5D1A622CA4C5000C89FBA /* Main.storyboard */,
 				F0F5D1A922CA4C5200C89FBA /* Assets.xcassets */,
 				F0F5D1AB22CA4C5200C89FBA /* LaunchScreen.storyboard */,
