@@ -17,6 +17,10 @@ class ViewController: UITableViewController {
         // Online data
         let urlString: String
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(creditsTapped))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
+        
         if navigationController?.tabBarItem.tag == 0 {
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         } else {
@@ -34,6 +38,32 @@ class ViewController: UITableViewController {
         } else {
             showError()
         }
+    }
+    
+    @objc func searchTapped() {
+        let ac = UIAlertController(title: "Enter words", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Search", style: .default) {
+            [weak self, weak ac] _ in
+            guard let answer = ac?.textFields?[0].text else { return }
+            self?.search(answer)
+        }
+        
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
+    
+    func search(_ answer: String) {
+        let lowerAnswer = answer.lowercased()
+        
+        print(lowerAnswer)
+    }
+    
+    @objc func creditsTapped() {
+        let ac = UIAlertController(title: "Credits", message: "This application uses the data made available by We The People API of the Whitehouse", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
     func showError() {
