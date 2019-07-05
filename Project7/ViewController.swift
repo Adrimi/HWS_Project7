@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     var petitions = [Petition]()
+    var filteredPetitions = [Petition]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +51,31 @@ class ViewController: UITableViewController {
             self?.search(answer)
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        
         ac.addAction(submitAction)
+        ac.addAction(cancelAction)
         present(ac, animated: true)
     }
     
     func search(_ answer: String) {
-        let lowerAnswer = answer.lowercased()
+        // possibly redundant
+        // let lowerAnswer = answer.lowercased()
         
-        print(lowerAnswer)
+        for petition in petitions {
+            if petition.title.contains(answer) {
+                filteredPetitions.append(petition)
+            }
+        }
+
+        // MARK - swap filtered to be the original petitions array (TEST)
+        print("\(petitions.count), \(filteredPetitions.count)")
+        
+        petitions = filteredPetitions
+        
+        print("\(petitions.count), \(filteredPetitions.count)")
+        // reload table
+        tableView.reloadData()
     }
     
     @objc func creditsTapped() {
@@ -82,7 +100,11 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return petitions.count
+        if filteredPetitions.isEmpty {
+            return petitions.count
+        } else {
+            return filteredPetitions.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
