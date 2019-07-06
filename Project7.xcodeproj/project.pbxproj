@@ -12,6 +12,7 @@
 		F0F5D1A822CA4C5000C89FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F5D1A622CA4C5000C89FBA /* Main.storyboard */; };
 		F0F5D1AA22CA4C5200C89FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F5D1A922CA4C5200C89FBA /* Assets.xcassets */; };
 		F0F5D1AD22CA4C5200C89FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F5D1AB22CA4C5200C89FBA /* LaunchScreen.storyboard */; };
+		F0F6402C22D13A25004D0F6F /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = F0F6402B22D13A25004D0F6F /* info.html */; };
 		F0F93CE522CB9B8500CE102B /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F93CE422CB9B8500CE102B /* Petition.swift */; };
 		F0F93CE722CB9CCF00CE102B /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F93CE622CB9CCF00CE102B /* Petitions.swift */; };
 		F0F93CE922CBA41300CE102B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F93CE822CBA41300CE102B /* DetailViewController.swift */; };
@@ -25,6 +26,7 @@
 		F0F5D1A922CA4C5200C89FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0F5D1AC22CA4C5200C89FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0F5D1AE22CA4C5200C89FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F6402B22D13A25004D0F6F /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
 		F0F93CE422CB9B8500CE102B /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		F0F93CE622CB9CCF00CE102B /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
 		F0F93CE822CBA41300CE102B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		F0F5D1A122CA4C5000C89FBA /* Project7 */ = {
 			isa = PBXGroup;
 			children = (
+				F0F6402B22D13A25004D0F6F /* info.html */,
 				F0F5D1A222CA4C5000C89FBA /* AppDelegate.swift */,
 				F0F93CE422CB9B8500CE102B /* Petition.swift */,
 				F0F93CE622CB9CCF00CE102B /* Petitions.swift */,
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F6402C22D13A25004D0F6F /* info.html in Resources */,
 				F0F5D1AD22CA4C5200C89FBA /* LaunchScreen.storyboard in Resources */,
 				F0F5D1AA22CA4C5200C89FBA /* Assets.xcassets in Resources */,
 				F0F5D1A822CA4C5000C89FBA /* Main.storyboard in Resources */,

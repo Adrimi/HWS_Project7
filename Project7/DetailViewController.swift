@@ -24,42 +24,17 @@ class DetailViewController: UIViewController {
 
         guard let detailItem = detailItem else {return}
         
-        let html = """
-        <html>
-        <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style> body { font-size: 150%; font-family: Comic Sans MS; } </style>
-        </head>
-        <body>
-        \(detailItem.body)
-        </body>
-        </html>
-        """
-        
-        // baseURL is to nil, cause i'm not using any external links to CSS, JS, pictures, etc.
-        webView.loadHTMLString(html, baseURL: nil)
-    }
-    
-}
-
-extension Data {
-    var html2AttributedString: NSAttributedString? {
+        let pathToHTML = Bundle.main.path(forResource: "info", ofType: "html")
         do {
-            return try NSAttributedString(
-                data: self,
-                options: [
-                    .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding: String.Encoding.utf16.rawValue],
-                documentAttributes: nil)
+            let html = try String(contentsOfFile: pathToHTML!)
+            print(html)
+            
+            // baseURL is to nil, cause i'm not using any external links to CSS, JS, pictures, etc.
+            webView.loadHTMLString(html, baseURL: nil)
+        
         } catch {
             print("error: ", error)
-            return nil
         }
     }
     
-    var html2String: String {
-        return html2AttributedString?.string ?? ""
-    }
 }
-
-extension 
