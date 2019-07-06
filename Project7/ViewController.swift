@@ -59,21 +59,21 @@ class ViewController: UITableViewController {
     }
     
     func search(_ answer: String) {
-        // possibly redundant
-        // let lowerAnswer = answer.lowercased()
         
-        for petition in petitions {
-            if petition.title.contains(answer) {
-                filteredPetitions.append(petition)
+        // If user have not provided any answer, head back to main "petitions" array
+        if !answer.isEmpty {
+            
+            // search without worrying about cased words
+            let lowerAnswer = answer.lowercased()
+            for petition in petitions {
+                if petition.title.lowercased().contains(lowerAnswer) {
+                    filteredPetitions.append(petition)
+                }
             }
+        } else {
+            filteredPetitions.removeAll()
         }
 
-        // MARK - swap filtered to be the original petitions array (TEST)
-        print("\(petitions.count), \(filteredPetitions.count)")
-        
-        petitions = filteredPetitions
-        
-        print("\(petitions.count), \(filteredPetitions.count)")
         // reload table
         tableView.reloadData()
     }
@@ -100,16 +100,15 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if filteredPetitions.isEmpty {
-            return petitions.count
-        } else {
-            return filteredPetitions.count
-        }
+        return filteredPetitions.isEmpty ? petitions.count : filteredPetitions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let petition = petitions[indexPath.row]
+
+        // ternary operator instead short if-else statement
+        let petition = filteredPetitions.isEmpty ? petitions[indexPath.row] : filteredPetitions[indexPath.row]
+
         cell.textLabel?.text = petition.title
         cell.detailTextLabel?.text = petition.body
         return cell
@@ -118,7 +117,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Load body on tap of the cell
         let vc = DetailViewController()
-        vc.detailItem = petitions[indexPath.row]
+        vc.detailItem = filteredPetitions.isEmpty ? petitions[indexPath.row] : filteredPetitions[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 

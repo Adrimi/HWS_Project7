@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
         <html>
         <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style> body { font-size: 150%; } </style>
+        <style> body { font-size: 150%; font-family: Comic Sans MS; } </style>
         </head>
         <body>
         \(detailItem.body)
@@ -40,15 +40,26 @@ class DetailViewController: UIViewController {
         webView.loadHTMLString(html, baseURL: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension Data {
+    var html2AttributedString: NSAttributedString? {
+        do {
+            return try NSAttributedString(
+                data: self,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf16.rawValue],
+                documentAttributes: nil)
+        } catch {
+            print("error: ", error)
+            return nil
+        }
+    }
+    
+    var html2String: String {
+        return html2AttributedString?.string ?? ""
+    }
+}
+
+extension 
