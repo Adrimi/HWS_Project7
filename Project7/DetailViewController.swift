@@ -25,13 +25,19 @@ class DetailViewController: UIViewController {
         guard let detailItem = detailItem else {return}
         
         let pathToHTML = Bundle.main.path(forResource: "info", ofType: "html")
+        
         do {
-            let html = try String(contentsOfFile: pathToHTML!)
-            print(html)
+            
+            // fetch data from .html AND insert dynamical data to the string
+            let html = try String(
+                contentsOfFile: pathToHTML!)
+            .replacingOccurrences(
+                of: "If you see this, something went wrong!",
+                with: detailItem.body)
+
             
             // baseURL is to nil, cause i'm not using any external links to CSS, JS, pictures, etc.
             webView.loadHTMLString(html, baseURL: nil)
-        
         } catch {
             print("error: ", error)
         }

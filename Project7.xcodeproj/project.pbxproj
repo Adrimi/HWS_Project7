@@ -62,7 +62,6 @@
 		F0F5D1A122CA4C5000C89FBA /* Project7 */ = {
 			isa = PBXGroup;
 			children = (
-				F0F6402B22D13A25004D0F6F /* info.html */,
 				F0F5D1A222CA4C5000C89FBA /* AppDelegate.swift */,
 				F0F93CE422CB9B8500CE102B /* Petition.swift */,
 				F0F93CE622CB9CCF00CE102B /* Petitions.swift */,
@@ -72,6 +71,7 @@
 				F0F5D1A922CA4C5200C89FBA /* Assets.xcassets */,
 				F0F5D1AB22CA4C5200C89FBA /* LaunchScreen.storyboard */,
 				F0F5D1AE22CA4C5200C89FBA /* Info.plist */,
+				F0F6402B22D13A25004D0F6F /* info.html */,
 			);
 			path = Project7;
 			sourceTree = "<group>";
